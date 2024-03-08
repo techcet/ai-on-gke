@@ -12,17 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-project_id = "ai-on-gke-jss-sandbox"
+project_id = "<your project ID>"
 
 ## this is required for terraform to connect to GKE master and deploy workloads
-create_cluster   = true # this flag will create a new standard public gke cluster in default network
-cluster_name     = "test-umesh3"
+create_cluster   = false # this flag will create a new standard public gke cluster in default network
+cluster_name     = "<cluster_name>"
 cluster_location = "us-central1"
 
 ## GKE environment variables
 kubernetes_namespace = "rag"
 create_gcs_bucket    = true
-gcs_bucket           = "rag-data-xyzuasasassa" # Choose a globally unique bucket name.
+gcs_bucket           = "rag-data-xyzu" # Choose a globally unique bucket name.
 
 cloudsql_instance        = "pgvector-instance"
 cloudsql_instance_region = "us-central1" # defaults to cluster_location, if not specified
