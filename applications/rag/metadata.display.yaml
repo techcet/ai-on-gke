@@ -192,14 +192,6 @@ spec:
             Once logged in, choose the <b>CPU</b> preset. Go to File -> Open From URL & upload and execute the notebook 
             <a href="https://raw.githubusercontent.com/GoogleCloudPlatform/ai-on-gke/main/applications/rag/example_notebooks/rag-kaggle-ray-sql-latest.ipynb"><i>rag-kaggle-ray-sql.ipynb</i></a>.
             Follow the <a href="https://github.com/GoogleCloudPlatform/ai-on-gke/blob/main/applications/rag/README.md#vector-embeddings-for-dataset">README.md</a> for detailed instructions.
-          showIf: '!variables.add_auth'
-        - heading: "Step 1: Generate Vector Embeddings for the Dataset"
-          description: |-
-            Go to the JupyterHub Application, log in with your organization's credentials.
-            Once logged in, choose the <b>CPU</b> preset. Go to File -> Open From URL & upload and execute the notebook 
-            <a href="https://raw.githubusercontent.com/GoogleCloudPlatform/ai-on-gke/main/applications/rag/example_notebooks/rag-kaggle-ray-sql-latest.ipynb"><i>rag-kaggle-ray-sql.ipynb</i></a>.
-            Follow the <a href="https://github.com/GoogleCloudPlatform/ai-on-gke/blob/main/applications/rag/README.md#vector-embeddings-for-dataset">README.md</a> for detailed instructions.
-          showIf: 'variables.add_auth'
         - heading: "Step 2: Prompt the Inference Server via a Chatbot"
           description: |-
             Go to the RAG Frontend Application, scroll to <i>Ports</i> section and initiate <b>PORT FORWARDING</b> (Run in Cloud Shell) to the front end application.

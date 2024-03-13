@@ -168,12 +168,6 @@ spec:
           description: |-
             Go to the JupyterHub Application, log in with <i>Jupyterhub User</i> and <i>Jupyterhub Password</i> (from the Outputs section).
             Once logged in, choose the appropriate preset and execute notebooks. 
-          showIf: '!variables.add_auth'
-        - heading: "Access JupyterHub Application"
-          description: |-
-            Go to the JupyterHub Application, log in with your organization's credentials. Once logged in, choose the appropriate preset and execute notebooks. 
-            Note: Application endpoint can take around 15-20 minutes to become accessible.
-          showIf: 'variables.add_auth'
       outputs:
         jupyterhub_password: {}
         jupyterhub_user: {}
