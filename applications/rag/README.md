@@ -127,8 +127,8 @@ This step generates the vector embeddings for your input dataset. Currently, the
 1. Fetch the Jupyterhub service endpoint & navigate to it in a browser. This should display the JupyterLab login UI:
    * IAP disabled: `kubectl get services proxy-public -n $NAMESPACE --output jsonpath='{.status.loadBalancer.ingress[0].ip}'`
    * IAP enabled: Read terraform output: `terraform output jupyterhub_uri`.
-       * From [Google Cloud Platform IAP](https://console.cloud.google.com/security/iap), check if the target user has role `IAP-secured Web App User`.
-       * Wait for the domain status to be `Active` by using `kubectl get managedcertificates jupyter-managed-cert -n $NAMESPACE --output jsonpath='{.status.domainStatus[0].status}'`
+       * From [Google Cloud Platform IAP](https://console.cloud.google.com/security/iap), ensure users have the role `IAP-secured Web App User`.
+       * Wait for the domain status to be `Active` (takes upto 20 minutes): `kubectl get managedcertificates jupyter-managed-cert -n $NAMESPACE --output jsonpath='{.status.domainStatus[0].status}'`
 
 2. Login to Jupyterhub:
    * IAP disabled: Use placeholder credentials:
@@ -157,8 +157,8 @@ This step generates the vector embeddings for your input dataset. Currently, the
 
 #### With IAP enabled
 1. Verify that IAP is enabled on [Google Cloud Platform (GCP) IAP](https://console.cloud.google.com/security/iap)(make sure you are logged in) for your application. If you encounter any errors, try re-enabling IAP.
-2. From *Google Cloud Platform IAP*, check if the target user has role `IAP-secured Web App User`. This role is necessary to access the application through IAP.
-3. Verify the domain is active using command:
+2. From [Google Cloud Platform IAP](https://console.cloud.google.com/security/iap), ensure users have the role `IAP-secured Web App User`.
+3. Wait for the domain status to be `Active` (takes upto 20 minutes):
     `kubectl get managedcertificates frontend-managed-cert -n rag --output jsonpath='{.status.domainStatus[0].status}'`
 4. Read terraform output: `terraform output frontend_uri` to find the domain created by IAP for accessing your service.
 5. Open your browser and navigate to the domain you retrieved in the previous step to start chatting!
